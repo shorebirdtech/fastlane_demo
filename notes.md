@@ -21,3 +21,10 @@ Upgraded fastlane. Following setup guide at https://docs.flutter.dev/deployment/
 
 The app doesn't build for iOS yet due to signing, that's fine. Going to start
 the setup on that platform, as it seems to be the most problematic.
+
+## iOS
+
+Ran `fastlane init`. Opted for manual setup, as the other options required
+signin to Apple and I don't think I want to do that as per the guide.
+
+Filled out fields in ios/Appfile
