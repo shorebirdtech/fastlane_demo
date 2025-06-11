@@ -32,3 +32,5 @@ signin to Apple and I don't think I want to do that as per the guide.
 - Added `dotenv` gem
 - Added `.env.default` and `.env.default.sample`
 - Filled out env.default file following the "For CD" instructions.
+- Ran `fastlane match nuke distribution`
+- Ran `fastlane ios generate_new_certificates`

@@ -4,14 +4,14 @@ platform :ios do
   lane :certificates do
     sync_code_signing(
       type: "development",
-      app_identifier: ['dev.shorebird.fastlane_demo'],
+      app_identifier: ['dev.shorebird.fastlane-demo'],
       force_for_new_devices: true,
       readonly: true
     )
 
     sync_code_signing(
       type: "appstore",
-      app_identifier: 'dev.shorebird.fastlane_demo',
+      app_identifier: 'dev.shorebird.fastlane-demo',
       readonly: true
     )
   end
@@ -20,7 +20,7 @@ platform :ios do
   lane :generate_new_certificates do
     sync_code_signing(
       type: "development",
-      app_identifier: ['dev.shorebird.fastlane_demo'],
+      app_identifier: ['dev.shorebird.fastlane-demo'],
       force_for_new_devices: true,
       readonly: false
     )
