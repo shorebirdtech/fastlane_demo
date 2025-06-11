@@ -5,7 +5,12 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: sync_code_signing" time="284.736313">
+      <testcase classname="fastlane.lanes" name="0: sync_code_signing" time="13.210277">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="1: sync_code_signing" time="27.066941">
         
       </testcase>
     

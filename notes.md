@@ -34,3 +34,7 @@ signin to Apple and I don't think I want to do that as per the guide.
 - Filled out env.default file following the "For CD" instructions.
 - Ran `fastlane match nuke distribution`
 - Ran `fastlane ios generate_new_certificates`
+- Added sync_code_signing step for appstore (distribution) cert
+
+Note that https://github.com/shorebirdtech/AppleCerts now contains info for
+our certs and provisioning profiles for the `dev.shorebird.fastlane-demo` app.
