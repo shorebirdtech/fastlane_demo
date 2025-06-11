@@ -52,3 +52,7 @@ our certs and provisioning profiles for the `dev.shorebird.fastlane-demo` app.
   - This failure turned out to be because the app's store metadata was not
     properly configured in App Store Connect.
 - Disabled automatic incrementing of version numbers in the build_app step
+
+### Adding Shorebird
+
+- Ran `shorebird init`
