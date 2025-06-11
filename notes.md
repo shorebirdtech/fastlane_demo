@@ -17,4 +17,7 @@ ones with bryan@ if needed, as this is just a proof-of-concept.
 Creating a private git repo to store the certs
 https://github.com/shorebirdtech/AppleCerts. It's currently empty.
 
-Upgraded fastlane.
+Upgraded fastlane. Following setup guide at https://docs.flutter.dev/deployment/cd#fastlane
+
+The app doesn't build for iOS yet due to signing, that's fine. Going to start
+the setup on that platform, as it seems to be the most problematic.
