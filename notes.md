@@ -57,3 +57,11 @@ our certs and provisioning profiles for the `dev.shorebird.fastlane-demo` app.
 
 - Ran `shorebird init`
 - Ran `fastlane add_plugin shorebird`
+- Added shorebird_release step
+- Running `fastlane ios release_shorebird` seems to be failing because the build
+  number is not being properly updated (what is in the pubspec.yaml is not what
+  is ending up in the Info.plist file).
+- This seems to be a transient issue, although I'm noticing that the
+  `shorebird_release_action` is not locating an .ipa file. The ipa file is also
+  not where I'd expect it to be after running `shorebird release` (i.e., in
+  ./build/ios/ipa/my_app.ipa)

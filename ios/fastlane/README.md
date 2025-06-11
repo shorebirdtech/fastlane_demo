@@ -37,7 +37,15 @@ Generate new certificates
 [bundle exec] fastlane ios deploy
 ```
 
-deploy
+deploy without shorebird
+
+### ios release_shorebird
+
+```sh
+[bundle exec] fastlane ios release_shorebird
+```
+
+deploy with shorebird
 
 ----
 

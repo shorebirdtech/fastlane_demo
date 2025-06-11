@@ -1,17 +1,19 @@
 platform :ios do
   
+  bundle_id = "dev.shorebird.fastlane-demo"
+  
   desc "Get certificates"
   lane :certificates do
     sync_code_signing(
       type: "development",
-      app_identifier: ['dev.shorebird.fastlane-demo'],
+      app_identifier: [bundle_id],
       force_for_new_devices: true,
       readonly: true
     )
 
     sync_code_signing(
       type: "appstore",
-      app_identifier: 'dev.shorebird.fastlane-demo',
+      app_identifier: bundle_id,
       readonly: true
     )
   end
@@ -20,24 +22,24 @@ platform :ios do
   lane :generate_new_certificates do
     sync_code_signing(
       type: "development",
-      app_identifier: ['dev.shorebird.fastlane-demo'],
+      app_identifier: [bundle_id],
       force_for_new_devices: true,
       readonly: false
     )
     sync_code_signing(
       type: "appstore",
-      app_identifier: 'dev.shorebird.fastlane-demo',
+      app_identifier: bundle_id,
       force_for_new_devices: true,
       readonly: false
     )
   end
 
-  desc "deploy"
+  desc "deploy without shorebird"
   lane :deploy do
     setup_ci
     sync_code_signing(
       type: "appstore",
-      app_identifier: 'dev.shorebird.fastlane-demo',
+      app_identifier: bundle_id,
       readonly: true
     )
     build_app(
@@ -51,6 +53,29 @@ platform :ios do
       in_house: false, # if it is enterprise or not
     )
     upload_to_app_store(
+      force: false,
+      precheck_include_in_app_purchases: false,
+      run_precheck_before_submit: true,
+      submit_for_review: false
+    )
+  end
+
+  desc "deploy with shorebird"
+  lane :release_shorebird do
+    setup_ci
+    sync_code_signing(
+      type: "appstore",
+      app_identifier: bundle_id,
+      readonly: true
+    )
+    # This step replaces the build_app step
+    shorebird_release(platform: "ios")
+    app_store_connect_api_key(
+      is_key_content_base64: true,
+      in_house: false, # if it is enterprise or not
+    )
+    upload_to_app_store(
+      app_identifier: bundle_id,
       force: false,
       precheck_include_in_app_purchases: false,
       run_precheck_before_submit: true,
