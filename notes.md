@@ -56,3 +56,4 @@ our certs and provisioning profiles for the `dev.shorebird.fastlane-demo` app.
 ### Adding Shorebird
 
 - Ran `shorebird init`
+- Ran `fastlane add_plugin shorebird`
