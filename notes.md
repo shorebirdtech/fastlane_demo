@@ -27,4 +27,8 @@ the setup on that platform, as it seems to be the most problematic.
 Ran `fastlane init`. Opted for manual setup, as the other options required
 signin to Apple and I don't think I want to do that as per the guide.
 
-Filled out fields in ios/Appfile
+- Filled out fields in ios/Appfile
+- Ran `fastlane match init`
+- Added `dotenv` gem
+- Added `.env.default` and `.env.default.sample`
+- Filled out env.default file following the "For CD" instructions.
