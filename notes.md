@@ -38,3 +38,17 @@ signin to Apple and I don't think I want to do that as per the guide.
 
 Note that https://github.com/shorebirdtech/AppleCerts now contains info for
 our certs and provisioning profiles for the `dev.shorebird.fastlane-demo` app.
+
+- Created an apple API key at https://appstoreconnect.apple.com/access/integrations/api
+- Set up fastlane deploy script
+- Running `fastlane ios deploy`
+  - Failed, needed to create an App entry in Appstore Connect
+  - Created, now failing at `upload_to_app_store` step. "No data"
+  - Ran `flutter build ipa --release`, error is "exportArchive "Runner.app" requires a provisioning profile."
+    - Downloaded profile from app store connect, didn't help
+    - Ran "Download Manual Profiles" from Xcode, didn't help
+    - I am able to upload the Runner.xcarchive file via Xcode, so this appears
+      to just be a "fastlane finding the provisioning profile" issue
+  - This failure turned out to be because the app's store metadata was not
+    properly configured in App Store Connect.
+- Disabled automatic incrementing of version numbers in the build_app step

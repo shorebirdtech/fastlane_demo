@@ -46,3 +46,6 @@ app.*.map.json
 
 # Fastlane
 **/fastlane/.env.default
+**/fastlane/Preview.html
+**/ios/Runner.app.dSYM.zip
+**/ios/Runner.ipa
