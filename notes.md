@@ -61,7 +61,16 @@ our certs and provisioning profiles for the `dev.shorebird.fastlane-demo` app.
 - Running `fastlane ios release_shorebird` seems to be failing because the build
   number is not being properly updated (what is in the pubspec.yaml is not what
   is ending up in the Info.plist file).
-- This seems to be a transient issue, although I'm noticing that the
-  `shorebird_release_action` is not locating an .ipa file. The ipa file is also
-  not where I'd expect it to be after running `shorebird release` (i.e., in
-  ./build/ios/ipa/my_app.ipa)
+  - This seems to be a transient issue, although I'm noticing that the
+    `shorebird_release_action` is not locating an .ipa file. The ipa file is also
+    not where I'd expect it to be after running `shorebird release` (i.e., in
+    ./build/ios/ipa/my_app.ipa)
+  - It's not prominently featured, but this is happening because no ipa is being
+    generated. The flutter build command can't find a provisioning profile, and
+    so it's only creating the xcarchive.
+- Shorebird releasing seems to be working, although new builds aren't appearing
+  in App Store Connect. I think this is related to IPAs not being produced. The
+  [docs for build_app](https://docs.fastlane.tools/actions/build_app/) suggest
+  that this command generates an export options plist for you, so we may need
+  to do that as part of shorebird_release.
+  - Update: this is being done as part of shorebird_release

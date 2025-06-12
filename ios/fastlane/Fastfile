@@ -1,7 +1,6 @@
 platform :ios do
-  
   bundle_id = "dev.shorebird.fastlane-demo"
-  
+
   desc "Get certificates"
   lane :certificates do
     sync_code_signing(
@@ -44,8 +43,8 @@ platform :ios do
     )
     build_app(
       scheme: "Runner",
-      export_options:{ 
-        manageAppVersionAndBuildNumber: false 
+      export_options: {
+        manageAppVersionAndBuildNumber: false
       }
     )
     app_store_connect_api_key(
