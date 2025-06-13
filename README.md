@@ -5,6 +5,9 @@ patch iOS apps using the
 [fastlane-plugin-shorebird](https://rubygems.org/gems/fastlane-plugin-shorebird/)
 fastlane plugin.
 
+We recommend reading our [official
+docs](https://docs.shorebird.dev/code-push/ci/fastlane/) for context.
+
 This app was created with `flutter create` using Flutter 3.32.2. The Flutter
 code has not been modified.
 
