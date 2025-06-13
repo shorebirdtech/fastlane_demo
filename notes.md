@@ -71,6 +71,8 @@ our certs and provisioning profiles for the `dev.shorebird.fastlane-demo` app.
 - Shorebird releasing seems to be working, although new builds aren't appearing
   in App Store Connect. I think this is related to IPAs not being produced. The
   [docs for build_app](https://docs.fastlane.tools/actions/build_app/) suggest
-  that this command generates an export options plist for you, so we may need
-  to do that as part of shorebird_release.
+  that this command generates an export options plist for you, so we may need to
+  do that as part of shorebird_release.
   - Update: this is being done as part of shorebird_release
+    (https://github.com/shorebirdtech/fastlane-plugin-shorebird/pull/4)
+  - This 0.3.0 of fastlane-plugin-shorebird is now live as of June 13, 2025.
