@@ -76,3 +76,4 @@ our certs and provisioning profiles for the `dev.shorebird.fastlane-demo` app.
   - Update: this is being done as part of shorebird_release
     (https://github.com/shorebirdtech/fastlane-plugin-shorebird/pull/4)
   - This 0.3.0 of fastlane-plugin-shorebird is now live as of June 13, 2025.
+- Added shorebird_patch step. Easy!

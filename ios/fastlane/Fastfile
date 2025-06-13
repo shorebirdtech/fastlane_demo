@@ -1,3 +1,6 @@
+# This Fastfile is largely based on
+# https://medium.com/revelo-tech/setting-up-automatic-ios-release-with-fastlane-and-match-on-ci-cd-server-16c3f1d79bc5
+
 platform :ios do
   bundle_id = "dev.shorebird.fastlane-demo"
 
@@ -44,6 +47,10 @@ platform :ios do
     build_app(
       scheme: "Runner",
       export_options: {
+        # This prevents the build number from being incremented automatically
+        # by Xcode during the submission process. Shorebird adds this
+        # automatically, and this property is *required* for Shorebird to be
+        # able to patch the app.
         manageAppVersionAndBuildNumber: false
       }
     )
@@ -79,6 +86,15 @@ platform :ios do
       precheck_include_in_app_purchases: false,
       run_precheck_before_submit: true,
       submit_for_review: false
+    )
+  end
+
+  desc "patch with shorebird"
+  lane :patch_shorebird do
+    setup_ci
+    shorebird_patch(
+      platform: "ios",
+      args: "--release-version=latest"
     )
   end
 end

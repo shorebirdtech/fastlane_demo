@@ -47,6 +47,14 @@ deploy without shorebird
 
 deploy with shorebird
 
+### ios patch_shorebird
+
+```sh
+[bundle exec] fastlane ios patch_shorebird
+```
+
+patch with shorebird
+
 ----
 
 This README.md is auto-generated and will be re-generated every time [_fastlane_](https://fastlane.tools) is run.
