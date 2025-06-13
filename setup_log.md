@@ -1,3 +1,11 @@
+This document was written in real-time as @bryanoltman set up fastlane with
+manual (i.e., not managed by Xcode) app signing and cert/provisioning profile
+management. It does not necessarily reflect every step I took, nor has it been
+edited for clarity. Start with our guide at
+https://docs.shorebird.dev/code-push/ci/fastlane/.
+
+# Problem
+
 Many of our users have problems with iOS signing involving Fastlane. I believe
 that we don't see the same issues they do because we let Xcode manage our app
 signing, which is a much less common setup among professional app development
@@ -5,6 +13,8 @@ teams. I'm going to try setting up signing using fastlane's
 [match](https://docs.fastlane.tools/actions/match/) and see what the pain points
 are. The resulting app will live in
 https://github.com/shorebirdtech/fastlane_demo.
+
+# Log
 
 Following
 https://medium.com/revelo-tech/setting-up-automatic-ios-release-with-fastlane-and-match-on-ci-cd-server-16c3f1d79bc5
