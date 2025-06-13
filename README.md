@@ -11,4 +11,5 @@ with Shorebird-specific steps added after completing the steps in the guide.
 
 All fastlane files are located in `ios/fastlane`.
 
-A step-by-step log of me (bryanoltman) creating this demo is viewable in [./setup_log.md](./setup_log.md).
+A step-by-step log of me (bryanoltman) creating this demo is viewable in
+[setup_log.md](./setup_log.md).
